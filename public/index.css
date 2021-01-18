@@ -1,0 +1,689 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins';
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #e2e2e2;
+    font-size: 15px;
+    color: #2b2b2b;
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.up {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    bottom: .5rem;
+    left: .5rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.up:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+.arrow {
+    border-left: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+    width: .8rem;
+    height: .8rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%) rotate(135deg);
+}
+
+.nav-logo {
+    background-image: url('./image/dog.svg');
+    width: 2rem;
+    height: 2rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 .5rem;
+}
+
+.nav-menu-btn {
+    border: 1px solid #2b2b2b;
+    border-radius: .2rem;
+    width: 1.8rem;
+    height: 1.5rem;
+    margin: 0 .5rem;
+    cursor: pointer;
+}
+
+.up-line {
+    background-color: #2b2b2b;
+    height: .1rem;
+    width: 1.2rem;
+    margin: .4rem auto;
+}
+
+.bottom-line {
+    background-color: #2b2b2b;
+    height: .1rem;
+    width: 1.2rem;
+    margin: 0 auto;
+}
+
+.navbar-small {
+    padding-top: .4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-larger {
+    display: none;
+}
+
+.hide {
+    top: -3rem;
+}
+
+.menu-background {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    height: 100rem;
+    width: 14rem;
+    right: 0;
+}
+
+.menu-btn {
+    border: 1px solid #000000;
+    border-radius: .2rem;
+    width: 1.8rem;
+    height: 1.5rem;
+    margin: .5rem .5rem;
+    cursor: pointer;
+}
+
+.left-line {
+    position: fixed;
+    background-color: rgb(0, 0, 0);
+    height: .1rem;
+    width: 1rem;
+    transform: rotate(45deg);
+    margin-top: .63rem;
+    margin-left: .33rem;
+}
+
+.right-line {
+    position: fixed;
+    background-color: rgb(0, 0, 0);
+    height: .1rem;
+    width: 1rem;
+    transform: rotate(-45deg);
+    margin-top: .63rem;
+    margin-left: .33rem;
+}
+
+.show {
+    display: block;
+}
+
+.nav-items {
+    margin-top: 1rem;
+    margin-right: .5rem;
+}
+
+.nav-items li {
+    text-align: right;
+    width: 100%;
+    margin: .8rem 0;
+}
+
+
+.nav-items li a {
+    letter-spacing: .1rem;
+    color: #000000;
+    font-weight: 900;
+    transition: color .3s;
+}
+
+.nav-items li a:hover,
+.nav-items li a:active {
+    color: #0000004b;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #2b2b2b;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.header {
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.header h4 {
+    font-size: 1.5rem;
+}
+
+.header h6 {
+    font-size: 1rem;
+    color: #2b2b2b80;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.profile-pic {
+    background-image: url('./image/user.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
+    margin: 1rem auto;
+}
+
+.profile-detail {
+    margin: 1rem auto;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    letter-spacing: .05rem;
+}
+
+.profile-name {
+    font-size: 1.6rem;
+}
+
+.interested {
+    background-color: #2b2b2b;
+    padding: 1rem 0 4rem 0;
+}
+
+.interested .header {
+    color: #e2e2e2;
+}
+
+.interested .contents {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.interested .contents h4 {
+    color: #e2e2e2;
+    text-align: center;
+}
+
+.interested .contents .image-1 {
+    background-image: url('./image/html.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto;
+}
+
+.interested .contents .image-2 {
+    background-image: url('./image/javascript.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto;
+}
+
+.interested .contents .image-3 {
+    background-image: url('./image/programming.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto;
+}
+
+.education {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.academy-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.academy-1-icon {
+    background-image: url('./image/university.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 4rem;
+    width: 4rem;
+    margin: .5rem auto;
+}
+
+.academy-1 {
+    border-bottom: 1px solid #2b2b2b;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.academy-name {
+    font-size: 1.2rem;
+}
+
+.academy-year {
+    font-size: .8rem;
+    color: #2b2b2b80;
+    margin: .5rem 0;
+}
+
+.academy-description {
+    margin: 0 0 1rem 0;
+}
+
+.academy-2 {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.academy-2-icon {
+    background-image: url('./image/school.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 4rem;
+    width: 4rem;
+    margin: .5rem auto;
+}
+
+.objective {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.objective .content h4 {
+    margin: 1rem 0;
+}
+
+.objective-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .5rem;
+}
+
+.objective-icon-1 {
+    background-image: url('./image/knowledge.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 4rem;
+    width: 4rem;
+}
+
+.objective-icon-2 {
+    background-image: url('./image/experience.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 4rem;
+    width: 4rem;
+}
+
+.objective-icon-3 {
+    background-image: url('./image/skills.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 4rem;
+    width: 4rem;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    justify-content: space-between;
+}
+
+.skills .content h4 {
+    margin: 1rem 0;
+}
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.experience .content h4 {
+    display: flex;
+    margin: 1rem 0;
+}
+
+.experience .footer {
+    margin-top: 2rem;
+}
+
+.experience .footer h1 {
+    text-align: center;
+}
+
+
+.prev-arrow {
+    border-left: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    width: .8rem;
+    height: .8rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-20%) rotate(45deg);
+    transition: .3s;
+}
+
+.exp-1-image {
+    background-color: #2b2b2b;
+    flex-grow: 1;
+    height: 10rem;
+}
+
+.exp-2-image {
+    background-color: #2b2b2b;
+    flex-grow: 1;
+    height: 10rem;
+}
+
+.next-btn {
+    position: relative;
+    background-color: #b3b3b3;
+    height: 10rem;
+    width: 2rem;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.next-btn:hover {
+    background-color: #b3b3b360;
+}
+
+.next-btn:hover .next-arrow {
+    width: 1rem;
+    height: 1rem;
+}
+
+.next-arrow {
+    border-left: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    width: .8rem;
+    height: .8rem;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translateX(20%) rotate(-135deg);
+    transition: .3s;
+}
+
+@media (min-width: 768px) {
+    .navbar-small {
+        display: none;
+    }
+
+    .navbar-larger {
+        display: block;
+        position: fixed;
+        background-color: #e2e2e2;
+        box-shadow: 0 .5rem .5rem 0 rgba(0, 0, 0, 0.1);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: .2rem 0;
+    }
+
+    .nav-items {
+        display: flex;
+    }
+
+    .nav-items li {
+        text-align: right;
+        margin: 0 1rem;
+    }
+
+    .nav-items li a {
+        letter-spacing: .1rem;
+        color: #000000;
+        font-weight: 900;
+        transition: color .3s;
+    }
+
+    .academy-header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .academy-1-icon {
+        height: 4rem;
+        width: 4rem;
+        margin: .5rem 1rem .5rem 0;
+    }
+
+    .academy-year {
+        margin: .5rem 0 .5rem 5rem;
+    }
+
+    .academy-description {
+        margin: 0 0 1rem 5rem;
+    }
+
+    .academy-2-icon {
+        margin: .5rem 1rem .5rem 0;
+    }
+
+    .objective-icons {
+        justify-content: space-around;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    .nav-logo {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .nav-items li a {
+        font-size: 1.2rem;
+    }
+
+    .header {
+        font-size: 3rem;
+        letter-spacing: .3rem;
+        margin: 4rem 0;
+    }
+
+    .header h4 {
+        font-size: 2rem;
+    }
+    
+    .header h6 {
+        font-size: 1.5rem;
+    }
+
+    .profile-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .profile-pic {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .profile-detail {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+        letter-spacing: .05rem;
+    }
+    
+    .profile-name {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .interested {
+        background-color: #2b2b2b;
+        padding: 1rem 0 4rem 0;
+    }
+    
+    .interested .contents {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 70%;
+        margin: 0 auto;
+    }
+    
+    .interested .contents h4 {
+        font-size: 1.5rem;
+    }
+    
+    .interested .contents .image-1 {
+        width: 7rem;
+        height: 7rem;
+    }
+    
+    .interested .contents .image-2 {
+        width: 7rem;
+        height: 7rem;
+    }
+    
+    .interested .contents .image-3 {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .academy-1-icon {
+        height: 6rem;
+        width: 6rem;
+        margin-right: 2rem;
+    }
+    
+    .academy-name {
+        font-size: 2rem;
+    }
+    
+    .academy-year {
+        font-size: 1.3rem;
+        margin-left: 8rem;
+    }
+    
+    .academy-description {
+        font-size: 1.5rem;
+        margin: 0 0 1rem 0;
+        margin-left: 8rem;
+    }
+    
+    .academy-2 {
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .academy-2-icon {
+        height: 6rem;
+        width: 6rem;
+        margin-right: 2rem;
+    }
+    
+    .objective .content h4 {
+        font-size: 1.5rem;
+    }
+    
+    .objective-icons {   
+        justify-content: space-around;
+    }
+    
+    .objective-icon-1 {
+        height: 6rem;
+        width: 6rem;
+    }
+    
+    .objective-icon-2 {
+        height: 6rem;
+        width: 6rem;
+    }
+    
+    .objective-icon-3 {
+        height: 6rem;
+        width: 6rem;
+    }
+
+    .skills {
+        width: 70%;
+        margin: 0 auto;
+    }
+    
+    .skills .content h2 {
+        font-size: 2rem;
+    }
+
+    .skills .content h4 {
+        font-size: 1.5rem;
+    }
+    
+    .experience .content h4 {
+        font-size: 1.5rem;
+    }
+}
